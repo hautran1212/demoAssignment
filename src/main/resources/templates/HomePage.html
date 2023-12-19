@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy8gpHTK85C9KROMhSzkzZg5PZZxJ8bEbc" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <img th:src="@{/img/logo.png}" alt="logo">
+    </div>
+    <div class="menu">
+        <li><a href="">NỮ</a>
+            <ul class="sub-menu">
+                <li><a href="">Hàng mới về</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Áo</a></li>
+                <li><a href="">Quần</a></li>
+            </ul>
+        </li>
+        <li><a href="">NAM</a>
+            <ul class="sub-menu">
+                <li><a href="">Hàng mới về</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Áo</a></li>
+                <li><a href="">Quần</a></li>
+            </ul>
+        </li>
+        <li><a href="">TRẺ EM</a></li>
+        <li><a href="">THÁNG 12 - SALE ĐẬM SÂU</a></li>
+        <li><a href="">LIFESTYLE</a></li>
+        <li><a href="">VỀ CHÚNG TÔI</a></li>
+    </div>
+    <div class="other">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-actions">
+            <button class="user-button"><i class="fas fa-user"></i></button>
+            <button class="help-button"><i class="fas fa-shopping-cart"></i></button>
+        </div>
+    </div>
+</header>
+<section id="Slider">
+    <div class="aspect-ratio-169">
+        <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
+        <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
+        <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
+        <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
+        <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
+    </div>
+    <div class="dot-container">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</section>
+<div class="button-container">
+    <a href="#" class="shopping-now-button">
+        <i class="fas fa-shopping-cart shopping-icon"></i>
+        Shopping Now
+    </a>
+</div>
+<div class="discount">
+    <div class="test cartegory-right row">
+        <div class="cartegory-right-content row">
+            <div class="cartegory-right-content-item">
+                <img th:src="@{/img/s1.jpg}" alt="">
+                <h1>TEST1</h1>
+                <p>20000<sup>đ</sup></p>
+            </div>
+            <div class="cartegory-right-content-item">
+                <img th:src="@{/img/s1.jpg}" alt="">
+                <h1>TEST2</h1>
+                <p>20000<sup>đ</sup></p>
+            </div>
+            <div class="cartegory-right-content-item">
+                <img th:src="@{/img/s1.jpg}" alt="">
+                <h1>TEST3</h1>
+                <p>20000<sup>đ</sup></p>
+            </div>
+            <div class="cartegory-right-content-item">
+                <img th:src="@{/img/s1.jpg}" alt="">
+                <h1>TEST4</h1>
+                <p>20000<sup>đ</sup></p>
+            </div>
+            <div class="cartegory-right-content-item">
+                <img th:src="@{/img/s1.jpg}" alt="">
+                <h1>TEST5</h1>
+                <p>20000<sup>đ</sup></p>
+            </div>
+            <div class="cartegory-right-content-item">
+                <img th:src="@{/img/s1.jpg}" alt="">
+                <h1>TEST6</h1>
+                <p>20000<sup>đ</sup></p>
+            </div>
+            <div class="cartegory-right-content-item">
+                <img th:src="@{/img/s1.jpg}" alt="">
+                <h1>TEST7</h1>
+                <p>20000<sup>đ</sup></p>
+            </div>
+            <div class="cartegory-right-content-item">
+                <img th:src="@{/img/s1.jpg}" alt="">
+                <h1>TEST8</h1>
+                <p>20000<sup>đ</sup></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2>About Us</h2>
+            <img th:src="@{/img/logo.png}" alt="" style="margin-top: 5px;">
+            <p>Công ty Cổ phần Dự Kim với số đăng ký kinh doanh: 0105777650</p>
+            <p>Địa chỉ đăng ký: Tổ dân phố Tháp, P.Đại Mỗ, Q.Nam Từ Liêm, TP.Hà Nội, Việt Nam</p>
+            <p>Số điện thoại: 0243 205 2222/ 090 589 8683</p>
+            <p>Email: cskh@ivy.com.vn</p>
+            <br>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-section contact">
+            <h2>Introduce</h2>
+            <p>Về IVYMODA</p>
+            <p>Tuyển dụng</p>
+            <P>Hệ thống cửa hàng</P>
+        </div>
+        <div class="footer-section social">
+            <h2>Customer service</h2>
+            <p>Chính sách điều khoản</p>
+            <p>Hướng dẫn mua hàng</p>
+            <p>Chính sách thanh toán</p>
+            <p>Chính sách đổi trả</p>
+            <p>Chính sách bảo hành</p>
+            <p>Chính sách giao nhận vận chuyển</p>
+        </div>
+        <div class="footer-section app">
+            <h2>Contact</h2>
+            <img th:src="@{/img/appstore.png}" alt="">
+            <img th:src="@{/img/googleplay.png}" alt="">
+            <p>Hotline</p>
+            <p>Email</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; TEST COMPANY. All rights reserved.
+    </div>
+</div>
+<script th:src="@{/js/javascript.js}"></script>
+</body>
+</html>

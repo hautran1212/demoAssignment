@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form đăng ký</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-control {
+      width: 100%;
+      height: 40px;
+      border-radius: 2px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+
+  </style>
+</head>
+<body>
+<header>
+  <h1>REGISTER</h1>
+</header>
+
+<div th:if="${param.success}">
+  <h3> Đăng ký thành công!!!</h3>
+</div>
+<div th:if="${param.failed}">
+  <h3> Mật khẩu không được trùng!!</h3>
+</div>
+  <div class="container">
+    <form th:action="@{/signup}" method="post" th:object="${user}">
+      <div class="form-group">
+        <label for="firstName">Họ</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" th:field="*{firstName}" required autofocus="autofocus">
+      </div>
+      <div class="form-group">
+        <label for="lastname">Tên</label>
+        <input type="text" class="form-control" id="lastname" name="lastName" th:field="*{lastName}" required autofocus="autofocus">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" th:field="*{email}" required autofocus="autofocus">
+      </div>
+      <div class="form-group">
+        <label for="birthday">Ngày sinh</label>
+        <input type="date" class="form-control" id="birthday" name="birthday" th:field="*{birthday}" required autofocus="autofocus">
+      </div>
+      <div class="form-group">
+        <label for="street">Tên Đường</label>
+        <input type="text" class="form-control" id="street" name="street" th:field="*{address.street}" required autofocus="autofocus">
+      </div>
+      <div class="form-group">
+        <label for="ward">Tên phường</label>
+        <input type="text" class="form-control" id="ward" name="ward" th:field="*{address.ward}" required autofocus="autofocus">
+      </div>
+      <div class="form-group">
+        <label for="district">Tên Quận </label>
+        <input type="text" class="form-control" id="district" name="district" th:field="*{address.district}" required autofocus="autofocus">
+      </div>
+      <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input type="password" class="form-control" id="password" name="password" th:field="*{password}" required autofocus="autofocus">
+      </div>
+      <div class="form-group">
+        <label for="passwordConfirmation">Nhập lại mật khẩu</label>
+        <input type="password" class="form-control" id="passwordConfirmation" name="passwordConfirmation" th:field="*{rePassword}" required autofocus="autofocus">
+      </div>
+
+        <button type="submit" class="btn btn-primary">Đăng ký</button>
+      <span style="margin-left: 5px">Already register? <a href="/" th:href="@{/login}">Login here</a></span>
+    </form>
+  </div>
+</body>
+</html>
