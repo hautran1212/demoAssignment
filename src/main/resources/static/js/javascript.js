@@ -48,3 +48,5 @@ function slider(index){
     dotItem[index].classList.add("active")
 }
 setInterval(imgSlider, 3000)
+
+// slider img

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy8gpHTK85C9KROMhSzkzZg5PZZxJ8bEbc" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a th:href="@{'/home'}"><img th:src="@{/img/logo.png}" alt="logo"></a>
+    </div>
+    <div class="menu">
+        <li><a href="">NỮ</a>
+            <ul class="sub-menu">
+                <li><a href="">Hàng mới về</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Áo</a></li>
+                <li><a href="">Quần</a></li>
+            </ul>
+        </li>
+        <li><a href="">NAM</a>
+            <ul class="sub-menu">
+                <li><a href="">Hàng mới về</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Áo</a></li>
+                <li><a href="">Quần</a></li>
+            </ul>
+        </li>
+        <li><a href="">TRẺ EM</a></li>
+        <li><a href="">THÁNG 12 - SALE ĐẬM SÂU</a></li>
+        <li><a href="">LIFESTYLE</a></li>
+        <li><a href="">VỀ CHÚNG TÔI</a></li>
+    </div>
+    <div class="other">
+        <form>
+            <div class="search-container">
+                <input type="text" name="keyword" class="search-input" placeholder="Search...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <div class="user-actions">
+            <button class="user-button"><i class="fas fa-user"></i></button>
+            <button class="shopping-button"><i class="fas fa-shopping-cart"></i></button>
+        </div>
+    </div>
+</header>
+<!-- category -->
+<section class="cartegory">
+    <div class="container">
+        <div class="cartegory-top row">
+            <p>Trang Chủ  </p><span>&#10230; </span> <p>Nữ </p><span>&#10230; </span> <p>Hàng nữ mới về</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="cartegory-left">
+                <ul>
+                    <li  class="cartegory-left-li"><a href="#">NỮ</a>
+                        <ul>
+                            <li><a href="">HÀNG NỮ MỚI VỀ</a></li>
+                            <li><a href="">BEYOUNG TRENDY</a></li>
+                            <li><a href="">JEAN FOR JOY</a></li>
+                            <li><a href="">HƯỚNG DƯƠNG ĐÓN NẮNG</a></li>
+                        </ul>
+                    </li>
+                    <li  class="cartegory-left-li"><a href="#">NAM</a>
+                        <ul>
+                            <li><a href="">HÀNG NAM MỚI VỀ</a></li>
+                            <li><a href="">BEYOUNG TRENDY</a></li>
+                            <li><a href="">JEAN FOR JOY</a></li>
+                            <li><a href="">HƯỚNG DƯƠNG ĐÓN NẮNG</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="cartegory-left">TRẺ EM</a></li>
+                    <li><a href="" class="cartegory-left">BỘ SƯU TẬP</a></li>
+                    <li><a href="" class="cartegory-left">ĐỒ GIỮ NHIỆT</a></li>
+                </ul>
+            </div>
+            <div class="cartegory-right row">
+                <div class="cartegory-right-top-item">
+                    <b>HÀNG NỮ MỚI VỀ</b>
+                </div>
+                <div class="cartegory-right-top-item">
+                    <button><span>Bộ lọc</span><i class="fas fa-sort-down"></i></button>
+                </div>
+                <div class="cartegory-right-top-item">
+                    <select name="" id="">
+                        <option value="">Sắp xếp</option>
+                        <option value="">Giá cao đến thấp</option>
+                        <option value="">Giá thấp đến cao</option>
+                    </select>
+                </div>
+                <div class="cartegory-right-content row">
+                    <div class="cartegory-right-content-item" th:each="pro: ${products}">
+                        <img th:src="${pro.imgProductEntities.get(1).url}" alt="">
+                        <h1 th:text="${pro.name}"></h1>
+                        <p th:text="${pro.price} + ' VND'"></p>
+                    </div>
+                    <div class="cartegory-right-bottom">
+                        <div class="pagination">
+                            <a th:if="${currentPage >1 }" th:href="@{${keyword != null && keyword!='' ? '?keyword=' + keyword +'&' :'?'} +'pageNo='+${currentPage - 1}}">&laquo;</a>
+                            <a  th:each="i : ${#numbers.sequence(1,totalPage)}" th:text="${i}" th:classappend="${currentPage == i ? 'active' :''}" th:href="@{${keyword != null && keyword!='' ? '?keyword=' + keyword +'&' :'?'} + 'pageNo='+${i}}"></a>
+                            <a th:if="${currentPage < totalPage }" th:href="@{${keyword != null && keyword!='' ? '?keyword=' + keyword +'&' :'?'} +'pageNo='+${currentPage + 1}}">&raquo;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- footer -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2>About Us</h2>
+            <img th:src="@{/img/logo.png}" alt="" style="margin-top: 5px;">
+            <p>Công ty Cổ phần Dự Kim với số đăng ký kinh doanh: 0105777650</p>
+            <p>Địa chỉ đăng ký: Tổ dân phố Tháp, P.Đại Mỗ, Q.Nam Từ Liêm, TP.Hà Nội, Việt Nam</p>
+            <p>Số điện thoại: 0243 205 2222/ 090 589 8683</p>
+            <p>Email: cskh@ivy.com.vn</p>
+            <br>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-section contact">
+            <h2>Introduce</h2>
+            <p>Về IVYMODA</p>
+            <p>Tuyển dụng</p>
+            <P>Hệ thống cửa hàng</P>
+        </div>
+        <div class="footer-section social">
+            <h2>Customer service</h2>
+            <p>Chính sách điều khoản</p>
+            <p>Hướng dẫn mua hàng</p>
+            <p>Chính sách thanh toán</p>
+            <p>Chính sách đổi trả</p>
+            <p>Chính sách bảo hành</p>
+            <p>Chính sách giao nhận vận chuyển</p>
+        </div>
+        <div class="footer-section app">
+            <h2>Contact</h2>
+            <img th:src="@{/img/appstore.png}" alt="">
+            <img th:src="@{/img/googleplay.png}" alt="">
+            <p>Hotline</p>
+            <p>Email</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; TEST COMPANY. All rights reserved.
+    </div>
+</div>
+    <script th:src="@{/js/javascript.js}"></script>
+</body>
+</html>

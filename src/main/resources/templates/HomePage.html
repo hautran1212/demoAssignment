@@ -12,7 +12,7 @@
 <body>
 <header>
     <div class="logo">
-        <img th:src="@{/img/logo.png}" alt="logo">
+        <img th:src="@{/img/logo.png}" alt="logo" th:href="@{'/home'}">
     </div>
     <div class="menu">
         <li><a href="">NỮ</a>
@@ -36,22 +36,25 @@
         <li><a href="">LIFESTYLE</a></li>
         <li><a href="">VỀ CHÚNG TÔI</a></li>
     </div>
+
     <div class="other">
+        <form>
         <div class="search-container">
             <input type="text" class="search-input" placeholder="Search...">
             <button class="search-button"><i class="fas fa-search"></i></button>
         </div>
+        </form>
         <div class="user-actions">
             <button class="user-button"><i class="fas fa-user"></i></button>
-            <button class="help-button"><i class="fas fa-shopping-cart"></i></button>
+            <button class="shopping-button"><i class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
 </header>
 <section id="Slider">
     <div class="aspect-ratio-169">
         <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
-        <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
-        <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
+        <img th:src="@{/img/pexels-evg-kowalievska-1040424.jpg}">
+        <img th:src="@{/img/pexels-juan-mendez-1536619.jpg}">
         <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
         <img th:src="@{/img/pexels-andrea-piacquadio-845434.jpg}">
     </div>
@@ -64,7 +67,7 @@
     </div>
 </section>
 <div class="button-container">
-    <a href="#" class="shopping-now-button">
+    <a th:href="@{'/home/shop'}" class="shopping-now-button">
         <i class="fas fa-shopping-cart shopping-icon"></i>
         Shopping Now
     </a>
@@ -72,50 +75,14 @@
 <div class="discount">
     <div class="test cartegory-right row">
         <div class="cartegory-right-content row">
-            <div class="cartegory-right-content-item">
-                <img th:src="@{/img/s1.jpg}" alt="">
-                <h1>TEST1</h1>
-                <p>20000<sup>đ</sup></p>
+            <div class="cartegory-right-content-item" th:each="pro: ${products}">
+                <img th:src="${pro.imgProductEntities.get(1).url}" alt="">
+                <h1 th:text="${pro.name}"></h1>
+                <p th:text="${pro.price} + ' VND'"></p>
             </div>
-            <div class="cartegory-right-content-item">
-                <img th:src="@{/img/s1.jpg}" alt="">
-                <h1>TEST2</h1>
-                <p>20000<sup>đ</sup></p>
-            </div>
-            <div class="cartegory-right-content-item">
-                <img th:src="@{/img/s1.jpg}" alt="">
-                <h1>TEST3</h1>
-                <p>20000<sup>đ</sup></p>
-            </div>
-            <div class="cartegory-right-content-item">
-                <img th:src="@{/img/s1.jpg}" alt="">
-                <h1>TEST4</h1>
-                <p>20000<sup>đ</sup></p>
-            </div>
-            <div class="cartegory-right-content-item">
-                <img th:src="@{/img/s1.jpg}" alt="">
-                <h1>TEST5</h1>
-                <p>20000<sup>đ</sup></p>
-            </div>
-            <div class="cartegory-right-content-item">
-                <img th:src="@{/img/s1.jpg}" alt="">
-                <h1>TEST6</h1>
-                <p>20000<sup>đ</sup></p>
-            </div>
-            <div class="cartegory-right-content-item">
-                <img th:src="@{/img/s1.jpg}" alt="">
-                <h1>TEST7</h1>
-                <p>20000<sup>đ</sup></p>
-            </div>
-            <div class="cartegory-right-content-item">
-                <img th:src="@{/img/s1.jpg}" alt="">
-                <h1>TEST8</h1>
-                <p>20000<sup>đ</sup></p>
-            </div>
+
         </div>
     </div>
-</div>
-</div>
 <div class="footer">
     <div class="footer-content">
         <div class="footer-section about">

@@ -120,7 +120,7 @@ body {
     display: flex;
 }
 .user-button,
-.help-button {
+.shopping-button {
     background-color: hsl(220, 100%, 99%);
     color: #000000;
     border: none;
@@ -133,7 +133,7 @@ body {
 /* Hover style for buttons */
 .search-button:hover,
 .user-button:hover,
-.help-button:hover {
+.shopping-button:hover {
     background-color: #000000;
     color: #ffffff;
 }
@@ -359,7 +359,10 @@ body {
 .cartegory-left-li.block ul{
     display: block;
 }
-
+.cartegory-right-bottom{
+    margin-top: auto;
+    margin-left: auto;
+}
 /* phân trang */
 .pagination {
     display: inline-block;
@@ -403,3 +406,5 @@ body {
     margin-left: 10%;
     text-align: center;
 }
+
+/* silde img */
